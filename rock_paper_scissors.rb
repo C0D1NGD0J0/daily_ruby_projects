@@ -12,54 +12,73 @@
 	# comparing both AI and user input to decide who won
 	# award to for each round winner
 
-moves = ['rock', 'paper', 'scissors']
-p1_score, ai_score = 0, 0;
+# Requirements (v4) 
+	# refactor code
+	round = 0;
+	def init
+		@moves = ['rock', 'paper', 'scissors'].shuffle
+		@p1_score, @ai_score = 0, 0;
+		@p1; @p1_move; @ai_move;
+	end
 
-print "Player 1 enter name > "
-p1 = gets.chomp.downcase
+	def user_inputs
+		print "Enter your name: "
+		@p1 = gets.chomp.downcase
 
-# ====================
+		print "#{@p1} make a move > "
+		@p1_move = gets.chomp.downcase
+		validate_user_input(@p1_move)
+	end
+	
+	def validate_user_input(user_input)
+		if @moves.include?(user_input)
+			return
+		else
+			puts "Enter a valid input (rock, paper, scissors)"
+		end
+	end
+		
+	def ai_move_input
+		print "AI make your move: "
+		puts @ai_move = @moves.sample
+	end
 
-print "#{p1} make a move > "
-p1_move = gets.chomp.downcase
+@user_win_case = [
+	['paper', 'rock'], 
+	['rock', 'scissors'], 
+	['scissors', 'paper']
+]
 
-print "AI make your move > "
-puts ai_move = moves.sample
+@user_lose_case = [
+	['rock', 'paper'], 
+	['scissors', 'rock'],
+	['paper', 'scissors']
+]
 
-# ====================
-if moves.include?(p1_move)
-	puts "Hurray"
-else
-	print "Enter a valid input (rock, paper, scissors)"
+def results(p1_move, ai_move)
+	if p1_move == ai_move
+		puts 'Its a tie'
+		scores
+	elsif @user_win_case.include?([p1_move, ai_move])
+		puts "#{@p1} wins!!"
+		@p1_score += 1
+		scores
+	else @user_lose_case.include?([p1_move, ai_move])
+		puts "AI wins!!"
+		@ai_score += 1
+		scores
+	end
 end
 
-# result possiblities
-# User wins
-p1_move == 'rock' && ai_move == 'scissors'
-	print "#{p1} win"
-	p1_score += 1
-p1_move == 'paper' && ai_move == 'rock'
-	print "#{p1} win"
-	p1_score += 1
-p1_move == 'scissors' && ai_move == 'paper'
-	print "#{p1} win"
-	p1_score += 1
+def scores
+	print 'Scores are:'
+	puts "#{@p1}: #{@p1_score}" + " AI: #{@ai_score}"
+end
 
-# AI wins
-ai_move == 'rock' && p1_move == 'scissors'
-	print "AI win"
-	ai_score += 1
-ai_move == 'paper' && p1_move == 'rock'
-	print "AI win"
-	ai_score += 1
-ai_move == 'scissors' && p1_move == 'paper'
-	print "AI win"
-	ai_score += 1
 
-# Tie
-p1_move == 'rock' && ai_move == 'rock'
-	puts "Its a tie"
-p1_move == 'paper' && ai_move == 'paper'
-	puts "Its a tie"
-p1_move == 'scissors' && ai_move == 'scissors'
-	puts "Its a tie"
+
+init
+user_inputs
+ai_move_input
+results(@p1_move, @ai_move)
+

@@ -8,22 +8,24 @@
 
 def calculator
 	loop do
-		puts "Enter" 
+		puts "Enter equation to be calculated(operator, num1, num2)" 
 		print '> '
 		input = gets.chomp.split(' ')
+
 		command = input[0].downcase
 		arg1 = input[1].to_f
 		arg2 = input[2].to_f
+
 		case command
-			when 'quit'
+			when 'quit', 'exit'
 				break
-			when 'add' || 'Add'
+			when '+'
 				puts arg1 + arg2
-			when 'substract' || 'minus'
+			when '-'
 				puts arg1 - arg2
-			when 'divide'
+			when '/'
 				puts arg1 / arg2
-			when 'multiply'
+			when '*'
 				puts arg1 * arg2
 			else
 				puts 'not a valid operator'

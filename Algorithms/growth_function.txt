@@ -1,0 +1,31 @@
+Growth of Functions:
+One of the important criteria in evaluating algorithms is the time it takes to complete a job. To have a meaningful comparison of algorithms, the estimate of computation time must be independent of the programming language, compiler, and computer used; must reflect on the size of the problem being solved; and must not depend on specific instances of the problem being solved.
+The quantities often used for the estimate are the worst case execution time, and average execution time of an algorithm, and they are represented by the number of some key operations executed to perform the required computation.
+
+O(1), lgn, n, n lgn, n^2, 2^n, n!
+
+Factorial: The factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. (wikipedia).
+	e.g. 5! = 5 * 4 * 3 * 2 * 1 = 120
+			 0! = 1
+
+Logarithms: The log rules might be expressed as:
+	. Multiplication inside the log can be turned into addition outside the log and vice versa
+	. Division inside the log can be turned into subtraction outside the log, and vice versa
+	. An exponent on everything inside a log can be moved out front as a multiplier, and vice versa
+	** These rules work only if the bases are the same **
+	** A logarithm written without a base usually means the base is 10 **
+	** Natural Logarithms (Base 'e' which is ~ 2.71828) 
+	example: log2(8) = 3 (in simplest term, how many 2s do we multiply to get 8)
+					 log5(625) = 4 (how many 5s do we need to be multiplied together to get 625)
+
+
+Growth of function: 
+	O(1) = 10
+	lgn  = 3.32
+	n    = 10
+	n lgn = 33.22
+	n^2 = 100
+	2^n = 1024
+	n! = 3628000
+
+		

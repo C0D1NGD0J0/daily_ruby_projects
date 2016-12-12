@@ -1,4 +1,6 @@
-Growth of Functions:
+Growth of Functions & Logarithms
+# ==============================
+
 One of the important criteria in evaluating algorithms is the time it takes to complete a job. To have a meaningful comparison of algorithms, the estimate of computation time must be independent of the programming language, compiler, and computer used; must reflect on the size of the problem being solved; and must not depend on specific instances of the problem being solved.
 The quantities often used for the estimate are the worst case execution time, and average execution time of an algorithm, and they are represented by the number of some key operations executed to perform the required computation.
 

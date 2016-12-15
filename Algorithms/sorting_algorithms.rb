@@ -11,8 +11,11 @@ arr = [12, 33, 91, 5, 45, 27]
 	# step 4 = [5, 12, 33, 45, 91]
 	# step 5 = [5, 12, 27, 33, 45, 91]
 
+# This works best when working with data that is almost already sorted
+
 # Best case
 	# O(n)
 
 # Avg case / worst case
 	# O(n^2) / O(n^2)
+	# worst case is when the data set is in reverse sorted order

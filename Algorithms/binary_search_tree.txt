@@ -1,0 +1,30 @@
+Binary Search Tree: 	A Binary Search Tree (BST) is a tree in which all the nodes follow the below-mentioned properties 		The left sub-tree of a node has a key less than or equal to its parent node's key.
+
+The right sub-tree of a node has a key greater than to its parent node's key. It's a visual respresentation of a data structure, aids in trying to create a rapid way that you can iterate throught your data structure to give you a result.
+
+ 												===> (15) <==== root node
+ 												/					\
+ 			(node)			==> 12						20 <== (leaf)
+ 										/		\
+ 							==> 10		14 <==
+ 		leaf(nodes without children)
+
+ . Everything on the left side of the root node has to be less than the root node
+ . Everything on the right side of the root node ig going to be greater than the root node
+ 		=> This rule also applies to node children
+ . To find the minimum value of a tree, traverse down the left side of the root node to the last node value
+ . To find the maximum value of a tree, traverse down the right side of the root node to the last node value
+ ============================================================
+ How BTS works
+array = [1,10,11,12,14,15,20,16,21,22,25]
+
+linear search
+	=> 15 = iterate through 6 items to get to the value 15
+	=> 25 = iterate through 11 items to get to the value 25
+	=> 99 = iterate through n items, only to return that the value isnt in the array
+	=> worst case time complexity O(n)
+
+BT search
+	15 = only had to search through 1 item, this is becasue it's the root node
+	25 = iterate through 4 steps because 25 is the last leaf in the tree. Also since 25 is bigger than the root node (15), we start our search on the righthand of the tree
+

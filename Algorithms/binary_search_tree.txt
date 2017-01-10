@@ -14,17 +14,20 @@ The right sub-tree of a node has a key greater than to its parent node's key. It
  		=> This rule also applies to node children
  . To find the minimum value of a tree, traverse down the left side of the root node to the last node value
  . To find the maximum value of a tree, traverse down the right side of the root node to the last node value
- ============================================================
- How BTS works
+
+============================================================
+How BTS works
 array = [1,10,11,12,14,15,20,16,21,22,25]
 
 linear search
-	=> 15 = iterate through 6 items to get to the value 15
-	=> 25 = iterate through 11 items to get to the value 25
-	=> 99 = iterate through n items, only to return that the value isnt in the array
-	=> worst case time complexity O(n)
+=> 15 = iterate through 6 items to get to the value 15
+=> 25 = iterate through 11 items to get to the value 25
+=> 99 = iterate through n items, only to return that the value isnt in the array
+=> worst case time complexity O(n)
 
 BT search
-	15 = only had to search through 1 item, this is becasue it's the root node
-	25 = iterate through 4 steps because 25 is the last leaf in the tree. Also since 25 is bigger than the root node (15), we start our search on the righthand of the tree
+15 = only had to search through 1 item, this is becasue it's the root node
+25 = iterate through 4 steps because 25 is the last leaf in the tree. Also since 25 is bigger than the root node (15), we start our search on the righthand of the tree
 
+
+============================================================
